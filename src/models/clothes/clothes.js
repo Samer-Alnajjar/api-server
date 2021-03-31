@@ -5,6 +5,6 @@ const clothesSchema = mongoose.Schema({
   name: { type: String, required: true}
 })
 
-const clothesModel = mongoose.model("person", clothesSchema);
+const clothesModel = mongoose.model("clothes", clothesSchema);
 
 module.exports = clothesModel;

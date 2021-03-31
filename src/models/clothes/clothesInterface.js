@@ -1,6 +1,6 @@
 "use strict"
 
-class Interface {
+class ClothesInterface {
 
   constructor(model) {
     this.model = model;
@@ -11,8 +11,8 @@ class Interface {
     return doc.save();
   }
 
-  // {_id:id}
-  // {_id} => {_id:_id}
+  // {_id:id} => {_id:"asdasd-asdsad-asdasd"}
+  //{_id} => {_id:"adsasdsa-asdsad-asdas"}
   read(id) {
     if(id) {
       return this.model.find({ _id: id });
@@ -26,7 +26,8 @@ class Interface {
   }
 
   delete(id) {
-    return this.model.findByIdAndDelete(id);
+    return null;
+  }
 }
 
-module.exports = Interface;
+module.exports = ClothesInterface;

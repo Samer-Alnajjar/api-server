@@ -8,9 +8,10 @@ Class401-Lab04
     - Having the ability to add data to the database for clothes and food
     - Having the ability to update an existing data in the database.
     - Having the ability to delete data from the database.
+    - Having the ability to store the data permanently.
   
 - **Tests that assert your features:**
-    - [GitHub Action](https://github.com/Samer-Alnajjar/basic-api-server/actions)
+    - [GitHub Action](https://github.com/Samer-Alnajjar/api-server/actions)
     - Coverage
 
 ![Coverage](coverage.png)
