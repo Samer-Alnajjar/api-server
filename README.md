@@ -22,7 +22,7 @@ Class401-Lab04
 
   ![UML-Diagram](UML_Diagram.png)
 
-- [Pull Request](https://github.com/Samer-Alnajjar/api-server/pull/3))
+- [Pull Request](https://github.com/Samer-Alnajjar/api-server/pull/3)
 
 - [Heroku-deployment](https://samer-api-server.herokuapp.com/)
 
