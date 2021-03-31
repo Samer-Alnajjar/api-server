@@ -2,39 +2,61 @@
 
 // Importing packages and files
 
-const Food = require("../models/food.js");
+const Food = require("../models/food/foodInterface.js");
+const foodModel = require("../models/food/food.js");
 
 // Creating object from the class "Clothes"
 
-const food = new Food;
+const food = new Food(foodModel);
 
 // Control functions
 
-function getFood(req, res) {
-  const resObj = food.read();
-  res.json(resObj);
+async function getFood(req, res, next) {
+  try{
+    const resObj = await food.read();
+    res.json(resObj);
+  } catch(error) {
+    next(error);
+  }
+}
+  
+
+async function getFoodById(req, res, next) {
+  try{
+    const resObj = await food.read(req.params.id);
+    res.json(resObj);
+  } catch(error) {
+    next(error);
+  }
 }
 
-function getFoodById(req, res) {
-  const resObj = food.read(req.params.id);
-  res.json(resObj);
+async function createFood(req, res, next) {
+  try {
+    const foodObject = req.body;
+    const resObj = await food.create(foodObject);
+    res.status(201).json(resObj);
+  } catch(error) {
+    next(error);
+  }
 }
 
-function createFood(req, res) {
-  const foodObject = req.body;
-  const resObj = food.create(foodObject);
-  res.status(201).json(resObj);
+async function updateFood(req, res, next) {
+  try {
+    const foodObject = req.body;
+    const resObj = await food.update(req.params.id, foodObject);
+    res.status(204).json(resObj);
+  } catch (error) {
+    next(error);
+  }
 }
 
-function updateFood(req, res) {
-  const foodObject = req.body;
-  const resObj = food.update(req.params.id, foodObject);
-  res.status(204).json(resObj);
-}
-
-function deleteFood(req, res) {
-  const resObj = food.delete(req.params.id);
-  res.json(resObj);
+async function deleteFood(req, res, next) {
+  try {
+    const resObj = await food.delete(req.params.id);
+    res.json(resObj);
+  } catch(error) {
+    next(error);
+  }
 }
 
 module.exports = {

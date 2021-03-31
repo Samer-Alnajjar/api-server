@@ -2,15 +2,16 @@
 
 // Importing packages and files
 
-const Clothes = require("../models/clothes.js");
+const Clothes = require("../models/clothes/clothesInterface.js");
+const clothesModel = require("../models/clothes/clothes");
 
 // Creating object from the class "Clothes"
 
-const clothes = new Clothes;
+const clothes = new Clothes(clothesModel);
 
 // Control functions
 
-async function getClothes(req, res) {
+async function getClothes(req, res, next) {
   try {
     const resObj = await clothes.read();
     res.json(resObj);
@@ -20,7 +21,9 @@ async function getClothes(req, res) {
   
 }
 
-function getClothesById(req, res) {
+// Just one example of using then instead of async functions
+
+function getClothesById(req, res, next) {
   clothes.read(req.params.id)
     .then(resObj => {
       res.json(resObj);
@@ -30,7 +33,7 @@ function getClothesById(req, res) {
     });
 }
 
-async function createClothes(req, res) {
+async function createClothes(req, res, next) {
   try {
     const clothesObject = req.body;
     const resObj = await clothes.create(clothesObject);
@@ -40,7 +43,7 @@ async function createClothes(req, res) {
   }
 }
 
-async function updateClothes(req, res) {
+async function updateClothes(req, res, next) {
   try {
     const clothesObject = req.body;
     const resObj = await clothes.update(req.params.id, clothesObject);
@@ -50,7 +53,7 @@ async function updateClothes(req, res) {
   }
 }
 
-async function deleteClothes(req, res) {
+async function deleteClothes(req, res, next) {
   try{
     const resObj = await clothes.delete(req.params.id);
     res.json(resObj);
