@@ -20,9 +20,9 @@ Class401-Lab04
 
   ![UML-Diagram](UML_Diagram.png)
 
-- [Pull Request]([UML_Diagram.png](https://github.com/Samer-Alnajjar/basic-api-server/pull/1))
+- [Pull Request]([UML_Diagram.png](https://github.com/Samer-Alnajjar/api-server/pull/2))
 
-- [Heroku-deployment](https://samer-basic-api-server.herokuapp.com/)
+- [Heroku-deployment](https://samer-api-server.herokuapp.com/)
 
 - How do I install the app or library?
   1. Clone the repo from git hub, by run the following command "git clone -repo-".
