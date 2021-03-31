@@ -2,6 +2,8 @@
 Class401-Lab04
 
 - **Branch name** : dev
+- **MongoDB URI:** 
+  MONGODB_URI=mongodb+srv://samer:0000@cluster0.1obxq.mongodb.net/samerdb?retryWrites=true&w=majority
 - **Feature requirement:**
     - Two main routes (clothes/ food)
     - Having the ability to get the data from the database for clothes and food
