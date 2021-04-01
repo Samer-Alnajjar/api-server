@@ -21,6 +21,7 @@ async function getFood(req, res, next) {
 }
   
 
+
 async function getFoodById(req, res, next) {
   try{
     const resObj = await food.read(req.params.id);
