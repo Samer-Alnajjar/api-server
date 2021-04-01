@@ -2,8 +2,8 @@
 
 // Importing packages and files
 
-const Clothes = require("../models/clothes/clothesInterface.js");
-const clothesModel = require("../models/clothes/clothes");
+const Clothes = require("../models/data-collection-class.js.js");
+const clothesModel = require("../models/clothes/clothes.js");
 
 // Creating object from the class "Clothes"
 
@@ -43,7 +43,7 @@ async function createClothes(req, res, next) {
   }
 }
 
-async function updateClothes(req, res, next) {
+async function updateClothes(req, res) {
   try {
     const clothesObject = req.body;
     const resObj = await clothes.update(req.params.id, clothesObject);

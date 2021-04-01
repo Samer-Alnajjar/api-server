@@ -38,7 +38,7 @@ describe('API Server', () => {
   });
   it('should delete a clothes on DELETE /clothes', async () => {
     const response = await request.delete(`/api/v1/clothes/${clothesID}`)
-    expect(response.body).toEqual(null);
+    expect(response.body._id).toEqual(clothesID);
   });
 
   // Testing food
@@ -71,6 +71,6 @@ describe('API Server', () => {
   });
   it('should delete a food on DELETE /food', async () => {
     const response = await request.delete(`/api/v2/food/${foodID}`)
-    expect(response.body).toEqual(null);
+    expect(response.body._id).toEqual(foodID);
   });
 });
