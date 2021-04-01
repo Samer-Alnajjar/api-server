@@ -2,7 +2,7 @@
 
 // Importing packages and files
 
-const Food = require("../models/data-collection-class.js.js");
+const Food = require("../models/data-collection-class.js");
 const foodModel = require("../models/food/food.js");
 
 // Creating object from the class "Clothes"
